@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- defineste tipul documentului ca fiind html5 -->
+
+<html lang="ro">
+<!-- elementul radacina al documentului html, limba este romana -->
+
+<head>
+    <!-- sectiunea head contine metadate si resurse externe -->
+
+    <meta charset="UTF-8">
+    <!-- seteaza codarea caracterelor pentru a suporta simboluri speciale -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- face site-ul responsive pe dispozitive mobile -->
+
+    <title>Magazin Căpșuni în Ciocolată</title>
+    <!-- titlul afisat in tab-ul browserului -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- leaga fisierul css extern pentru stilizare -->
+
+    <!-- favicon-uri pentru diferite dispozitive si rezolutii -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+    <link rel="manifest" href="site.webmanifest">
+    <!-- fisier manifest pentru functionalitati pwa -->
+</head>
+
+<body>
+<!-- continutul vizibil al paginii -->
+
+<header class="main-header">
+    <!-- header-ul principal al paginii -->
+
+    <div class="header-overlay">
+        <!-- overlay pentru efect vizual peste background -->
+
+        <h1>Căpșuni în Ciocolată</h1>
+        <!-- titlul principal al site-ului -->
+
+        <p>Delicii perfecte pentru orice moment!</p>
+        <!-- subtitlu descriptiv -->
+    </div>
+</header>
+
+<nav>
+    <!-- bara de navigare -->
+
+    <button onclick="showSection('home')">Acasă</button>
+    <!-- afiseaza sectiunea home -->
+
+    <button onclick="showSection('products')">Produse</button>
+    <!-- afiseaza sectiunea cu produse -->
+
+    <button onclick="showSection('reviews')">Recenzii</button>
+    <!-- afiseaza sectiunea cu recenzii -->
+
+    <button onclick="showSection('contact')">Contact</button>
+    <!-- afiseaza sectiunea de contact -->
+</nav>
+
+<div id="floating-cart-btn" onclick="showSection('cart')">
+    <!-- buton plutitor pentru cosul de cumparaturi -->
+
+    🛒 <span id="cart-count">0</span>
+    <!-- icon cos + numarul de produse din cos -->
+</div>
+
+<main>
+<!-- continutul principal al paginii -->
+
+    <section id="home" class="section">
+        <!-- sectiunea de prezentare -->
+
+        <h1>Despre Căpșunile în Ciocolată</h1>
+
+        <p class="intro-text">
+            <!-- text descriptiv despre produs -->
+            Căpșunile în ciocolată au fost inventate pentru a combina dulceața naturală a fructului cu 
+            savoarea ciocolatei fine. Aceste delicii au devenit populare pentru cadouri, petreceri sau 
+            momente de răsfăț personal. Fiecare cutie este făcută cu grijă și atenție la detalii.
+        </p>
+    </section>
+
+    <section id="products" class="section">
+        <!-- sectiunea cu lista de produse -->
+
+        <h2>Produsele noastre</h2>
+
+        <div class="products-grid">
+            <!-- grid care contine cardurile produselor -->
+
+            <div class="product-card">
+                <!-- card individual de produs -->
+
+                <img src="capsuni6.jpg" alt="Cutie 6 buc">
+                <!-- imaginea produsului -->
+
+                <h3>Cutie 6 buc</h3>
+                <p class="price">350 lei</p>
+
+                <button class="action-btn" onclick="addToCart('Cutie 6 buc', 350, 'capsuni6.jpg')">
+                    Adaugă în coș
+                </button>
+                <!-- buton care adauga produsul in cos -->
+            </div>
+
+            <!-- urmatoarele carduri au aceeasi structura -->
+            <div class="product-card">
+                <img src="capsuni9.jpg" alt="Cutie 9 buc">
+                <h3>Cutie 9 buc</h3>
+                <p class="price">500 lei</p>
+                <button class="action-btn" onclick="addToCart('Cutie 9 buc', 500, 'capsuni9.jpg')">Adaugă în coș</button>
+            </div>
+
+            <div class="product-card">
+                <img src="capsuni12.jpg" alt="Cutie 12 buc">
+                <h3>Cutie 12 buc</h3>
+                <p class="price">700 lei</p>
+                <button class="action-btn" onclick="addToCart('Cutie 12 buc', 700, 'capsuni12.jpg')">Adaugă în coș</button>
+            </div>
+
+            <div class="product-card">
+                <img src="capsuni15.jpg" alt="Cutie 15 buc">
+                <h3>Cutie 15 buc</h3>
+                <p class="price">900 lei</p>
+                <button class="action-btn" onclick="addToCart('Cutie 15 buc', 900, 'capsuni15.jpg')">Adaugă în coș</button>
+            </div>
+
+            <div class="product-card">
+                <img src="capsuni20.jpg" alt="Cutie 20 buc">
+                <h3>Cutie 20 buc</h3>
+                <p class="price">1200 lei</p>
+                <button class="action-btn" onclick="addToCart('Cutie 20 buc', 1200, 'capsuni20.jpg')">Adaugă în coș</button>
+            </div>
+
+            <div class="product-card">
+                <img src="capsuni25.jpg" alt="Cutie 25 buc">
+                <h3>Cutie 25 buc</h3>
+                <p class="price">1500 lei</p>
+                <button class="action-btn" onclick="addToCart('Cutie 25 buc', 1500, 'capsuni25.jpg')">Adaugă în coș</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section">
+        <!-- sectiunea cu recenzii -->
+
+        <h1>Ce spun clienții noștri</h1>
+
+        <div class="slider-wrapper">
+            <!-- container pentru slider -->
+
+            <button class="nav-arrow left" id="prevBtn" onclick="moveSlider(-1)">
+                &#10094;
+            </button>
+            <!-- sageata pentru slide anterior -->
+
+            <div class="reviews-slider" id="slider">
+                <!-- containerul care se deplaseaza -->
+
+                <div class="review-card">
+                    <!-- card individual de recenzie -->
+                    <p class="rating">5/5 ⭐⭐⭐⭐⭐</p>
+                    <p>„Cele mai bune căpșuni!”</p>
+                    <h4>Maria P.</h4>
+                </div>
+
+                <!-- restul recenziilor au aceeasi structura -->
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Perfect pentru cadouri.”</p><h4>Andrei L.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Gust excelent!”</p><h4>Elena R.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Calitate superioară.”</p><h4>Ionut B.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Succes total!”</p><h4>Simona T.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Livrare promptă.”</p><h4>Robert G.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Foarte proaspete.”</p><h4>Ana S.</h4></div>
+                <div class="review-card"><p class="rating">5/5 ⭐⭐⭐⭐⭐</p><p>„Un răsfăț!”</p><h4>Vlad C.</h4></div>
+            </div>
+
+            <button class="nav-arrow right" id="nextBtn" onclick="moveSlider(1)">
+                &#10095;
+            </button>
+            <!-- sageata pentru slide urmator -->
+        </div>
+
+        <div class="slider-dots" id="dotsContainer"></div>
+        <!-- puncte de navigare slider -->
+    </section>
+
+    <section id="contact" class="section">
+        <!-- sectiunea de contact -->
+
+        <h1 class="contact-title">Contact</h1>
+
+        <div class="contact-info">
+            <!-- informatii de contact -->
+
+            <p class="intro-text">
+                Email: contact@capsuni-ciocolata.ro<br>
+                Telefon: 0777 123 456
+            </p>
+
+            <p class="intro-text">
+                Ne găsești și pe rețelele de socializare!
+            </p>
+
+            <div class="social-buttons">
+                <!-- butoane social media -->
+
+                <button class="social-btn instagram" onclick="goToDemoPage('social')" title="Instagram">
+                    <!-- icon svg instagram -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </button>
+
+                <button class="social-btn facebook" onclick="goToDemoPage('social')" title="Facebook">
+                    <!-- icon svg facebook -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="section">
+        <!-- sectiunea cosului de cumparaturi -->
+
+        <h2>Coșul tău</h2>
+
+        <div id="cart-items-container">
+            <!-- lista produselor din cos -->
+            <p>Coșul este gol momentan.</p>
+        </div>
+
+        <div id="cart-footer" style="display: none;">
+            <!-- zona afisata doar cand cosul are produse -->
+
+            <div class="cart-total-display">
+                Total de plată: <span id="cart-total">0</span> lei
+            </div>
+
+            <button class="checkout-btn" onclick="goToDemoPage('checkout')">
+                Finalizează Comanda
+            </button>
+        </div>
+    </section>
+
+    <section id="demo-page" class="section demo-screen">
+        <!-- pagina demo pentru functii inactive -->
+
+        <div class="demo-content">
+            <h1 id="demo-title">Mulțumim pentru interes!</h1>
+            <p id="demo-message">Aceasta este o versiune DEMO a site-ului.</p>
+            <p id="demo-note" class="small-note">
+                Funcționalitatea de plată nu este activă în acest exemplu.
+            </p>
+
+            <button onclick="showSection('home')" class="back-home-btn">
+                Înapoi la Magazin
+            </button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <!-- footer-ul site-ului -->
+    © 2026 Căpșuni în Ciocolată. Toate drepturile rezervate.
+</footer>
+
+<script src="main.js"></script>
+<!-- fisier javascript care contine logica site-ului -->
+
+</body>
+</html>

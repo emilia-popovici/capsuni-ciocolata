@@ -1,0 +1,507 @@
+/* stil general pentru body: font, culori, layout pe coloana */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffeef0;
+    color: #5d4037;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* permite ca main sa ocupe spatiul ramas intre header si footer */
+main { 
+    flex: 1; 
+}
+
+/* containerul headerului cu imagine de fundal */
+.main-header {
+    background-image: url('capsuni-header.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* overlay semi-transparent peste imagine */
+.header-overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #c5896e;
+}
+
+/* stil pentru titlul principal din header */
+.main-header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    color: #8d4030;
+    text-transform: uppercase;
+}
+
+/* subtitlu din header */
+.main-header p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* bara de navigatie fixa sus */
+nav {
+    background: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+/* butoanele din navigatie */
+nav button {
+    background-color: #c5896e;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+/* efect hover pentru butoanele din nav */
+nav button:hover { 
+    background-color: #a36b55; 
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* stil de baza pentru toate sectiunile */
+.section { 
+    display: none;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* titlurile mari din sectiunile home si contact */
+#home h1, 
+#contact h1 { 
+    color: #c5896e;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* stil comun pentru paragrafele introductive */
+.intro-text { 
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #000;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+/* spatiu suplimentar pentru sectiunea contact */
+#contact .contact-info {
+    margin-top: 20px;
+}
+
+/* grid-ul care afiseaza produsele */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* card individual de produs */
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* imaginea produsului */
+.product-card img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+}
+
+/* titlul produsului */
+.product-card h3 { 
+    color: #c5896e; 
+    margin: 10px 0; 
+    font-size: 1.5rem; 
+}
+
+/* pretul produsului */
+.price { 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    margin-bottom: 15px;
+}
+
+/* stil comun pentru butoanele de actiune */
+.action-btn, 
+.checkout-btn, 
+.back-home-btn {
+    background-color: #c5896e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+    margin-top: auto;
+}
+
+/* hover pentru butoane de actiune */
+.action-btn:hover, 
+.checkout-btn:hover, 
+.back-home-btn:hover {
+    background-color: #a36b55;
+    transform: scale(1.05);
+}
+
+/* buton special pentru finalizare comanda */
+.checkout-btn {
+    font-size: 1.3rem;
+    padding: 15px 40px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* container slider recenzii */
+.slider-wrapper { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+/* slider-ul care se deplaseaza orizontal */
+.reviews-slider { 
+    display: flex; 
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+    gap: 20px; 
+    width: 100%; 
+    padding-bottom: 10px;
+    scrollbar-width: none;
+}
+
+/* ascunde scrollbar-ul in chrome */
+.reviews-slider::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* card individual de review */
+.review-card { 
+    min-width: 300px; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 15px; 
+    flex-shrink: 0; 
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* sagetile sliderului */
+.nav-arrow { 
+    background: #c5896e; 
+    border: none; 
+    color: white; 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer; 
+    font-size: 18px; 
+}
+
+/* stare dezactivata pentru sageti */
+.nav-arrow:disabled { 
+    background: #e0e0e0; 
+    cursor: not-allowed; 
+    opacity: 0.5; 
+}
+
+/* container puncte slider */
+.slider-dots { 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 10px; 
+}
+
+/* punct individual */
+.dot { 
+    width: 12px; 
+    height: 12px; 
+    background-color: #ccc; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+/* punct activ */
+.dot.active { 
+    background-color: #c5896e; 
+    transform: scale(1.2); 
+}
+
+/* butonul de cos fix in colt */
+#floating-cart-btn {
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px;
+    background-color: white; 
+    color: #c5896e; 
+    border: 2px solid #c5896e;
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    cursor: pointer; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    z-index: 2000;
+}
+
+/* card produs din cos */
+.cart-item {
+    background: white; 
+    border-radius: 15px; 
+    padding: 20px; 
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* imagine produs din cos */
+.cart-item img { 
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-right: 20px; 
+}
+
+/* detalii produs din cos */
+.item-details { 
+    flex-grow: 1; 
+    text-align: left; 
+}
+
+/* titlu produs din cos */
+.item-details h3 { 
+    color: #c5896e; 
+    margin: 0 0 10px 0; 
+    font-size: 1.4rem; 
+}
+
+/* container pentru cantitate */
+.qty-container {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    background: #fdf0f1;
+    padding: 5px 15px; 
+    border-radius: 10px; 
+    width: fit-content;
+}
+
+/* eticheta cantitate */
+.qty-label { 
+    font-weight: bold; 
+    color: #555; 
+}
+
+/* butoane + si - */
+.qty-btn { 
+    background: #c5896e; 
+    color: white; 
+    border: none; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* afisaj cantitate */
+.qty-display { 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    color: #333; 
+    min-width: 20px; 
+    text-align: center; 
+}
+
+/* unitate bucati */
+.qty-unit { 
+    color: #777; 
+    font-size: 0.9rem; 
+}
+
+/* pret total produs */
+.item-total-price { 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: #c5896e; 
+    margin-left: 20px; 
+}
+
+/* footer cos cu total */
+#cart-footer {
+    max-width: 800px; 
+    margin: 30px auto;
+    border-top: 2px solid #e0c0b0;
+    padding-top: 20px; 
+    text-align: center;
+}
+
+/* afisaj total cos */
+.cart-total-display {
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: #5d4037; 
+    margin-bottom: 20px;
+}
+
+/* continut pagina demo */
+.demo-content h1 { 
+    font-size: 3rem; 
+    color: #c5896e; 
+    margin-bottom: 20px; 
+}
+
+.demo-content p { 
+    font-size: 1.5rem; 
+}
+
+/* nota mica demo */
+.demo-content .small-note { 
+    font-size: 1rem; 
+    color: #888; 
+    margin-bottom: 30px; 
+    font-style: italic;
+}
+
+/* footer general al site-ului */
+footer { 
+    background-color: #c5896e; 
+    color: white; 
+    text-align: center; 
+    padding: 20px 0; 
+    margin-top: auto; 
+    width: 100%; 
+}
+
+/* ajustari pentru textul din contact */
+#contact .intro-text {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* container pentru butoane social media */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* stil comun pentru butoane social */
+.social-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* efect hover social */
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* culoare instagram */
+.social-btn.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* culoare facebook */
+.social-btn.facebook {
+    background-color: #1877F2;
+}
+
+/* responsive pentru mobile */
+@media (max-width: 768px) {
+    .products-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+    .cart-item { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .cart-item img { 
+        margin: 0 0 15px 0; 
+    }
+
+    .item-total-price { 
+        margin: 15px 0 0 0; 
+    }
+
+    nav { 
+        padding: 10px 0; 
+        gap: 10px; 
+    }
+
+    nav button { 
+        padding: 12px 10px; 
+        font-size: 1rem; 
+        width: 45%; 
+        flex-grow: 1; 
+    }
+
+    .demo-content h1 { 
+        font-size: 2rem; 
+    }
+}
